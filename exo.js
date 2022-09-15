@@ -79,10 +79,10 @@ class Map {
   getColoredMap() {
     
     // // TODO: That's where you work
+    let landNum = 0
     let map = this.getRawMap();
     let ROW = map.length;
         let COL = map[0].length;
-        let count = 0;
         var color = [0,0,0]
 
         for (let i = 0; i < ROW; i++)
@@ -94,11 +94,13 @@ class Map {
                     
                     color = this.generateRandomColor()
                     this.DFS(map, i, j, ROW, COL, color); //traversal starts from current cell
+                    landNum++,
                     console.log("/////////////////////",color)
                 }
             }
         }
-        console.log(count);
+        document.getElementById("numisland").innerHTML = landNum
+        
 
     }
   
